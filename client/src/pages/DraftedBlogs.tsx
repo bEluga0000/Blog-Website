@@ -24,19 +24,21 @@ export function DraftedBlogs() {
         }
         blogInit()
     }, [])
-    if (loading) {
-        return <CircularProgress />
-    }
-    else {
-        return (
-            <div>
-                {blog.map((b) => {
-                    return (
-                        <MyBlogShow title={b.title} desc={b.description} date={b.createdAt} published={b.published} bid={b._id} />
-                    )
+    
+        if (loading) {
+            return <CircularProgress />
+        }
+        else {
+            return (
+                <div>
+                    {blog.map((b) => {
+                        return (
+                            <MyBlogShow title={b.title} desc={b.description} date={b.createdAt} published={b.published} bid={b._id} />
+                        )
 
-                })}
-            </div>
-        )
-    }
+                    })}
+                </div>
+            )
+        }
+    
 }

@@ -19,6 +19,7 @@ type BlogState = BlogType[]|null
 
 export function PreviewPage(){
     const [blog,setBlog] = useState<BlogState>(null)
+    // const user = useRecoilValue(usernameState)
     const {blogId} = useParams()
     const navigate = useNavigate()
     // const user = useRecoilValue(usernameState)
@@ -39,6 +40,7 @@ export function PreviewPage(){
            
         
         },[])
+        
         if(!blog )
         {
             return <CircularProgress/>
